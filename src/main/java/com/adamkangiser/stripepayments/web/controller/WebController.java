@@ -13,6 +13,6 @@ public class WebController {
     @GetMapping("/")
     public String home(Model model) {
         model.addAttribute("stripePublicKey", stripePublicKey);
-        return "checkout";
+        return "index";
     }
 }
