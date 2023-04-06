@@ -1,5 +1,5 @@
 //api key
-const stripe = Stripe("pk_test_51MtcZbGbY7ZFyfeLGsBPRpl53hx4cUuQ3bD6bQyMdBp2KimOJ71oA6YMzgo0F0klnQEewprDV5dMYFzv2JkPDuah00Fy0SyIa3");
+const stripe = Stripe(stripePublicKey);
 
 
 // The items the customer wants to buy
@@ -52,7 +52,7 @@ async function handleSubmit(e) {
     elements,
     confirmParams: {
       // Make sure to change this to your payment completion page
-      return_url: "http://localhost:4242/checkout.html",
+      return_url: "http://localhost:8080",
       receipt_email: emailAddress,
     },
   });

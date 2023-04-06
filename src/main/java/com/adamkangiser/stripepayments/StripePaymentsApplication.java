@@ -2,15 +2,19 @@ package com.adamkangiser.stripepayments;
 
 import com.stripe.Stripe;
 import jakarta.annotation.PostConstruct;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class StripePaymentsApplication {
 
+	@Value("${stripe.api.key}")
+	private String stripeApiKey;
+
 	@PostConstruct
 	public void setup() {
-		Stripe.apiKey = "sk_test_51MtcZbGbY7ZFyfeLZ8PEIcN8klSihBSWbPAqHeyBsOYoIljQL3lOZAehxtQbbRMoF1ew2DaM1rdKepyAP1sxGxmD00gIdFMAvX";
+		Stripe.apiKey = stripeApiKey;
 
 	}
 
